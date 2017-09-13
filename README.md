@@ -28,6 +28,7 @@ Options:
   -r, --*resource[=$GATEWAY_RESOURCE_URL]  *gateway resource url
 
 ```
+*  website-gateway.exe -c root:mypassword@tcp(10.0.12.201:3306)/rbac -l 0.0.0.0:1234 -r http://10.0.12.200:10003
 
 * -c --conn **GATEWAY_CONN_STR**, mysql connection string, format is *user:pass@tcp(domain:port)/dbname*
 

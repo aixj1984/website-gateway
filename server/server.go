@@ -41,6 +41,8 @@ func NewGatewayServer(connStr string, resourceHostStr string, defaultRole ...str
 		s.DefaultRegisterRole = key.KEY_BasicRole
 	}
 
+	s.Static("/static", "static")
+
 	s.Use(NewCoockieSession())
 	s.mountAuthenticateEndpoints()
 	s.mountAuthorizationEndPoints()

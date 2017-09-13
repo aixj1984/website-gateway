@@ -14,7 +14,7 @@ g = _, _
 e = some(where (p.eft == allow)) 
 
 [matchers]
-m = g(r.sub, p.sub) && keyMatch(r.obj, p.obj) && (r.act == p.act || p.act == "*")
+m = g(r.sub, p.sub) && keyMatch2(r.obj, p.obj) && (r.act == p.act || p.act == "*")
 `
 
 //说明：如果规则是只要一个权限是不允许的则不允许，则e = some(where (p.eft == allow)) && !some(where (p.eft == deny))

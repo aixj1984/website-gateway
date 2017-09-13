@@ -20,3 +20,57 @@ func main() {
 		return nil
 	})
 }
+
+/*
+package main
+
+import (
+	"html/template"
+	"io"
+	"net/http"
+
+	"github.com/labstack/echo"
+)
+
+type Template struct {
+	templates *template.Template
+}
+
+func (t *Template) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
+	return t.templates.ExecuteTemplate(w, name, data)
+}
+
+func (t *Template) AddTemplate() {
+
+}
+
+func main() {
+	e := echo.New()
+
+	t := &Template{
+		templates: template.ParseFiles(template.ParseGlob("views/*")),
+	}
+
+	e.Renderer = t
+
+	e.GET("/hello", Hello)
+
+	e.Static("/static", "static")
+	e.GET("/", func(c echo.Context) error {
+
+		return c.File("views/index.html")
+		//return c.String(http.StatusOK, "Hello, World!")
+	})
+
+	e.GET("/test", Hello)
+
+	e.File("/abc", "views/index.html")
+
+	e.Logger.Fatal(e.Start(":1323"))
+}
+
+func Hello(c echo.Context) error {
+	return c.Render(http.StatusOK, "hello", nil)
+}
+
+*/

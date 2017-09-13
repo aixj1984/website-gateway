@@ -27,8 +27,6 @@
 package enforcer
 
 import (
-	"fmt"
-
 	"website-gateway/key"
 
 	"github.com/casbin/casbin"
@@ -75,7 +73,6 @@ func MiddlewareWithConfig(config Config) echo.MiddlewareFunc {
 	}
 
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
-		fmt.Printf("aaaaaaaaa")
 		return func(c echo.Context) error {
 			if config.Skipper(c) || config.CheckPermission(c) {
 				return next(c)
